@@ -23,7 +23,7 @@ export default class Grid extends Component {
       ...other
     } = this.props;
     const Element = nodeName || DEFAULT_NODE;
-    const classes = cx({
+    const classes = classnames({
       [flexboxgrid['container']]: !fluid,
       [flexboxgrid['container-fluid']]: fluid
     });

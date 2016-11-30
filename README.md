@@ -1,4 +1,4 @@
-# React Flexboxgrid
+# React Flexbox Grid
 
 http://flexboxgrid.com/ ported to react components.
 
