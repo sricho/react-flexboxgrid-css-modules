@@ -1,26 +1,26 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import expect from 'expect';
-import { classPrefix, classSuffix, classExists } from './test-utils';
-import Col from '../src/Col';
+import { classPrefix, classExists } from './test-utils';
+import Row from '../src/Row';
 
 
-describe('Testing Column', function () {
+describe('Testing Row', function () {
 
   const renderer = TestUtils.createRenderer();
   const classMap = {
-    xs: classSuffix('col-xs'),
-    sm: classSuffix('col-sm'),
-    md: classSuffix('col-md'),
-    lg: classSuffix('col-lg'),
-    xsOffset: classSuffix('col-xs-offset'),
-    smOffset: classSuffix('col-sm-offset'),
-    mdOffset: classSuffix('col-md-offset'),
-    lgOffset: classSuffix('col-lg-offset'),
-    xsReorder: classPrefix('xs'),
-    smReorder: classPrefix('sm'),
-    mdReorder: classPrefix('md'),
-    lgReorder: classPrefix('lg'),
+    xsHAlign: classPrefix('xs'),
+    smHAlign: classPrefix('sm'),
+    mdHAlign: classPrefix('md'),
+    lgHAlign: classPrefix('lg'),
+    xsVAlign: classPrefix('xs'),
+    smVAlign: classPrefix('sm'),
+    mdVAlign: classPrefix('md'),
+    lgVAlign: classPrefix('lg'),
+    xsDistribution: classPrefix('xs'),
+    smDistribution: classPrefix('sm'),
+    mdDistribution: classPrefix('md'),
+    lgDistribution: classPrefix('lg'),
     reverse: classExists('reverse'),
   };
 
@@ -37,20 +37,20 @@ describe('Testing Column', function () {
     });
   }
 
-  it('should render a Col', function () {
-    renderer.render(<Col xs={12} sm={8} md={6} lg={4} />);
+  it('should render a Row', function () {
+    renderer.render(<Row />);
 
     const { type, props: { className } } = renderer.getRenderOutput();
     expect(type).toBe('div');
-    checkAllProps(className, { xs: 12, sm: 8, md: 6, lg: 4 });
+    checkAllProps(className, {});
   });
 
   it('should preserve class name', function () {
-    renderer.render(<Col xs={12} className="foo" />);
+    renderer.render(<Row className="foo" />);
 
     const { type, props: { className } } = renderer.getRenderOutput();
     expect(className).toContain('foo');
-    checkAllProps(className, { xs: 12 });
+    checkAllProps(className, {});  // validate there are no other classes
   });
 
 });

@@ -31,8 +31,11 @@ export default class Row extends Component {
 
   render() {
     const {
-      xsAlign, smAlign, mdAlign, lgAlign,
+      xsHAlign, smHAlign, mdHAlign, lgHAlign,
+      xsVAlign, smVAlign, mdVAlign, lgVAlign,
+      xsDistribution, smDistribution, mdDistribution, lgDistribution,
       reverse,
+      className,
       nodeName,
       children,
       ...other
@@ -53,7 +56,7 @@ export default class Row extends Component {
       [flexboxgrid[`${smDistribution}-sm`]]: smDistribution,
       [flexboxgrid[`${mdDistribution}-md`]]: mdDistribution,
       [flexboxgrid[`${lgDistribution}-lg`]]: lgDistribution
-    });
+    }, className);
 
     return (
       <Element className={ classes } { ...other }>

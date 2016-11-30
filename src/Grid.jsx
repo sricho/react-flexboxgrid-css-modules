@@ -18,6 +18,7 @@ export default class Grid extends Component {
   render() {
     const {
       fluid,
+      className,
       nodeName,
       children,
       ...other
@@ -26,7 +27,7 @@ export default class Grid extends Component {
     const classes = classnames({
       [flexboxgrid['container']]: !fluid,
       [flexboxgrid['container-fluid']]: fluid
-    });
+    }, className);
 
     return (
       <Element className={ classes } { ...other }>

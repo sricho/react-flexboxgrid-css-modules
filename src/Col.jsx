@@ -36,6 +36,7 @@ export default class Col extends Component {
       md, mdOffset, mdReorder,
       lg, lgOffset, lgReorder,
       reverse,
+      className,
       nodeName,
       children,
       ...other
@@ -55,7 +56,7 @@ export default class Col extends Component {
       [flexboxgrid[`${mdReorder}-xs`]]: mdReorder,
       [flexboxgrid[`${lgReorder}-xs`]]: lgReorder,
       [flexboxgrid['col-reverse']]: reverse
-    });
+    }, className);
 
     return (
       <Element className={ classes } { ...other }>
