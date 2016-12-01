@@ -7,6 +7,7 @@ const HAlignType = PropTypes.oneOf(['start', 'center', 'end']);
 const VAlignType = PropTypes.oneOf(['top', 'middle', 'bottom']);
 const DistributionType = PropTypes.oneOf(['around', 'between'])
 
+
 export default class Row extends Component {
   static propTypes = {
     reverse: PropTypes.bool,
