@@ -44,10 +44,10 @@ export default class Col extends Component {
     } = this.props;
     const Element = nodeName || DEFAULT_NODE;
     const classes = classnames({
-      [flexboxgrid[`col-xs${Number.isInteger(xs) ? `-${xs}` : ""}`]]: xs,
-      [flexboxgrid[`col-sm${Number.isInteger(sm) ? `-${sm}` : ""}`]]: sm,
-      [flexboxgrid[`col-md${Number.isInteger(md) ? `-${md}` : ""}`]]: md,
-      [flexboxgrid[`col-lg${Number.isInteger(lg) ? `-${lg}` : ""}`]]: lg,
+      [flexboxgrid[`${Number.isInteger(xs) ? `col-xs-${xs}` : ""}`]]: xs,
+      [flexboxgrid[`${Number.isInteger(sm) ? `col-sm-${sm}` : ""}`]]: sm,
+      [flexboxgrid[`${Number.isInteger(md) ? `col-md-${md}` : ""}`]]: md,
+      [flexboxgrid[`${Number.isInteger(lg) ? `col-lg-${lg}` : ""}`]]: lg,
       [flexboxgrid[`col-xs-offset-${xsOffset}`]]: xsOffset,
       [flexboxgrid[`col-sm-offset-${smOffset}`]]: smOffset,
       [flexboxgrid[`col-md-offset-${mdOffset}`]]: mdOffset,
